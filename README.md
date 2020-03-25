@@ -21,22 +21,30 @@ Code for package load are included in all files
 #### Airport Choice Model
 
 Logistic Regression Model 1 (with Number of Transport variable included in the preprocessed model)
+
 ![image](https://user-images.githubusercontent.com/55430338/77512343-13ece800-6e30-11ea-87cf-749d61a1176a.png)
 
 
 Logistic Regression Model 2 (with Number of AccessTime variable included in the preprocessed model)
+
 ![image](https://user-images.githubusercontent.com/55430338/77512348-18b19c00-6e30-11ea-9d47-7e1881c790f7.png)
 
 
 Decision Tree Model 
+
 ![image](https://user-images.githubusercontent.com/55430338/77512356-1ea77d00-6e30-11ea-9649-1eaf2b691417.png)
+
+
 
 #### Airline Choice Model
 
+
 Logistic Regression 1 (Korean & Asiana Airlines vs Foreign airlines & LCC)
+
 ![image](https://user-images.githubusercontent.com/55430338/77512407-38e15b00-6e30-11ea-8860-a665bca8465b.png)
 
 Logistic Regression 2 (Korean LCC vs Other Airlines Choice)
+
 ![image](https://user-images.githubusercontent.com/55430338/77512422-40086900-6e30-11ea-84ce-c6bf086bd4f1.png)
 
 
