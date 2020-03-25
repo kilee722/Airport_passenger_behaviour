@@ -27,6 +27,7 @@ Logistic Regression Model 1 (with Number of Transport variable included in the p
 Logistic Regression Model 2 (with Number of AccessTime variable included in the preprocessed model)
 ![image](https://user-images.githubusercontent.com/55430338/77512348-18b19c00-6e30-11ea-9d47-7e1881c790f7.png)
 
+
 Decision Tree Model 
 ![image](https://user-images.githubusercontent.com/55430338/77512356-1ea77d00-6e30-11ea-9649-1eaf2b691417.png)
 
