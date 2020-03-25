@@ -1,0 +1,244 @@
+---
+title: "ML_project_EDA"
+author: "Ki Min Lee"
+date: "2/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Load libraries
+library(tidyverse)
+library(dplyr)
+library(gridExtra)
+library(janitor)
+library(kableExtra)
+library(formattable)
+library(readxl)
+library(inspectdf)
+```
+
+```{r}
+# Load data
+
+clean_df <-  read_xlsx("C:/Users/klee1/OneDrive/Desktop/School/Term2/BUAN5310/final_project_airline/Clean_data/Clean_Airport.xlsx")
+
+
+```
+
+# Descriptive stat 
+```{r}
+str(clean_df)
+```
+```{r}
+count(clean_df, Airport)
+```
+
+# Airport_Airline Data
+```{r}
+clean_df
+```
+
+```{r}
+clean_df %>% inspect_na() %>% show_plot()
+
+```
+
+```{r}
+clean_df %>%
+  inspect_types() %>%
+  show_plot()
+```
+```{r}
+clean_df %>%
+  inspect_num() %>%
+  show_plot()
+```
+```{r}
+clean_df %>%
+  inspect_cor() %>%
+  show_plot()
+```
+```{r}
+str(clean_df)
+```
+```{r}
+clean_df %>% summary()
+```
+
+# Base EDA
+```{r}
+clean_df %>%
+  ggplot(aes(x = Airport)) + geom_bar()
+
+
+
+barplot(prop.table(table(clean_df$Airport)))
+
+
+
+ggplot(clean_df,aes(x = Airline)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+ggplot(clean_df,aes(x = Age)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+ggplot(clean_df,aes(x = Gender)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+
+ggplot(clean_df,aes(x = Nationality)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+
+ggplot(clean_df,aes(x = TripPurpose)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+
+ggplot(clean_df,aes(x = TripDuration)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+ggplot(clean_df,aes(x = FlyingCompanion)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = ProvinceResidence)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = GroupTravel)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = NoTripsLastYear)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = Destination)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+ggplot(clean_df,aes(x = DepartureTime)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = SeatClass)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = Airfare)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = NoTransport)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = ModeTransport)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = AccessTime)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+ggplot(clean_df,aes(x = Occupation)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+ggplot(clean_df,aes(x = Income)) + geom_histogram(stat = 'count', binwidth = 0.5)
+
+
+```
+
+
+# Multivariate EDA by Airport
+
+```{r}
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(Airline)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(Age)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(Gender)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(Nationality)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(TripPurpose)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(TripDuration)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(FlyingCompanion)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(ProvinceResidence)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(GroupTravel)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(NoTripsLastYear)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(Destination)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(DepartureTime)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(SeatClass)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_histogram(aes(fill = (Airfare)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(NoTransport)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(ModeTransport)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(AccessTime)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(Occupation)), position = "dodge")
+
+ggplot(clean_df, aes(Airport)) + geom_bar(aes(fill = as.factor(Income)), position = "dodge")
+
+
+```
+
+
+# Multivariate EDA by Airline
+
+```{r}
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(Airport)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(Age)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(Gender)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(Nationality)), position = "dodge")
+
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(TripPurpose)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(TripDuration)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(FlyingCompanion)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(ProvinceResidence)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(GroupTravel)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(NoTripsLastYear)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(Destination)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(DepartureTime)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(SeatClass)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_histogram(aes(fill = (Airfare)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(NoTransport)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(ModeTransport)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(AccessTime)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(Occupation)), position = "dodge")
+
+ggplot(clean_df, aes(Airline)) + geom_bar(aes(fill = as.factor(Income)), position = "dodge")
+
+
+```
+
+
+
+
+
+
+
+
+
+
+

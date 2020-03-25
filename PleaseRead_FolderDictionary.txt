@@ -1,0 +1,38 @@
+
+Dictionary
+
+Pre Processing codes:
+(Note to run DataProcessing_step1 before step2)
+EDA_clean_data
+DataProcessing_step1 : To get the average of airfare from reference data
+DataProcessing_step2: To fill in NA for Income, the rest of Airfare, and AccessTime
+DataRegrouping: Create new grouping option to use in the model
+
+Excels: 
+
+Airport_choice: Dataset processed after DataProcessing_step1
+Clean_Airport: Use for Decision Tree
+Regroup_Airport: Use for Logit models
+
+==================================================================
+
+Model codes: 
+
+*** All Logit Models used Regroup_Airport.xlsx****
+Logit_airline_LCC
+Logit_airline_Big
+Logit_airport_AccessTime
+Logit_airport_NoTransport
+
+***All DT models used Clean_airport.xlsx***
+DecisionTree_airport
+DecisionTree_airline_LCC
+DecisionTree_airline_Big
+
+ROC graphs for DT: 
+
+DecisionTree_withOptimalMaxDept_Airport
+DecisionTree_withOptimalMaxDept_Big : for Korean Air and Asiana vs. Other model
+DecisionTree_withOptimalMaxDept_LCC : for LCC vs. other model
+
+
