@@ -60,7 +60,7 @@ The objective of our study is to determine how air travelers in the Seoul Metrop
 Given that GMP is the smaller and older airport and mainly has flights to China or Japan, Destination plays a very important role in customer’s decision on choosing between GMP or ICN in our model. The preliminary results of this paper show airline, customer’s nationality, number of transportations needed to get to the airport and whether it is a redeye flight or not are also significant in customer’s airport choice. Considering GMP was built long time ago and is closer to the city center, if the customer doesn’t want to do complicated transport to the airport, they will more likely to go with GMP and not ICN since it is a lot further out. On the other hand, travelers are not allowed to stay overnight at the GMP airport, thus we expect if the person has late evening or nighttime flight, they will most likely to choose ICN since ICN is bigger and open 24/7. If a customer is not Korean and not familiar with Seoul area airports, they might not be aware of the GMP’s condition and will be slightly more likely to choose it while if the customer is Korean, they would know the policy as well as history of GMP and would prefer to use ICN. 
 
 
-
+Download and see FINAL_REPORT-With_processed_data.docx for further details.
 
 
 
